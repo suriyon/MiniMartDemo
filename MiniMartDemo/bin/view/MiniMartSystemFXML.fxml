@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="pane_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MiniMartSystemController">
+   <children>
+      <BorderPane fx:id="pane_border" layoutX="5.0" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar>
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <HBox prefHeight="100.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="90.0" prefWidth="80.0">
+                           <graphic>
+                              <ImageView fitHeight="90.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/menu_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <JFXButton fx:id="toolbar_login" buttonType="RAISED" focusTraversable="false" onAction="#showLogin" prefHeight="90.0" prefWidth="120.0" styleClass="button-line" stylesheets="@../css/style.css" text="Login" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fx:id="img_login" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/lock_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="toolbar_home" buttonType="RAISED" focusTraversable="false" onAction="#clearContent" prefHeight="90.0" prefWidth="120.0" styleClass="button-line" stylesheets="@../css/style.css" text="Home" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/home_page_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="toolbar_user" buttonType="RAISED" disable="true" focusTraversable="false" onAction="#showUser" prefHeight="90.0" prefWidth="120.0" styleClass="button-line" stylesheets="@../css/style.css" text="Users" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/staff_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="toolbar_category" buttonType="RAISED" disable="true" focusTraversable="false" onAction="#showCategoryFrame" prefHeight="90.0" prefWidth="150.0" styleClass="button-line" stylesheets="@../css/style.css" text="Category" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/playlist_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="toolbar_product" buttonType="RAISED" disable="true" focusTraversable="false" onAction="#showProductFrame" prefHeight="90.0" prefWidth="150.0" styleClass="button-line" stylesheets="@../css/style.css" text="Products" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/ingredients_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="toolbar_exit" buttonType="RAISED" focusTraversable="false" onAction="#exitProgram" prefHeight="90.0" prefWidth="120.0" styleClass="button-line" stylesheets="@../css/style.css" text="Exit" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images24/close_window_24px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" />
+               </BorderPane.margin>
+            </VBox>
+         </top>
+         <center>
+            <AnchorPane fx:id="pane_content" prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="5.0" top="5.0" />
+               </BorderPane.margin></AnchorPane>
+         </center>
+         <bottom>
+            <Pane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Your Welcome: ">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lbl_user" layoutX="114.0" layoutY="5.0" prefHeight="21.0" prefWidth="200.0" text="Unknown User" textFill="RED" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" top="5.0" />
+   </padding>
+</AnchorPane>

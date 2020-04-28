@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="pane_user" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="tb_user" prefHeight="280.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="col_username" editable="false" prefWidth="210.0" resizable="false" sortable="false" text="Username" />
+                <TableColumn fx:id="col_password" editable="false" prefWidth="210.0" resizable="false" sortable="false" text="Password" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="70.0" prefWidth="200.0">
+               <children>
+                  <JFXTextField fx:id="txt_username" labelFloat="true" prefWidth="200.0" promptText="Enter Username" />
+                  <JFXTextField fx:id="txt_password" labelFloat="true" prefWidth="200.0" promptText="Enter Password">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <JFXButton fx:id="btn_add_user" buttonType="RAISED" onAction="#addUser" style="-fx-background-color: #000000;" text="ADD USER" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="16" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

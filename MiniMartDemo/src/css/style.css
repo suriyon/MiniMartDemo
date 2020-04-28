@@ -1,0 +1,4 @@
+.button-line:hover {
+	-fx-border-width: 0.0px 0.0px 3.0px 0.0px;
+	-fx-border-color: #EC1C21;
+}
