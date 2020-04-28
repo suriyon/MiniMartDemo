@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="pane_sale" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SaleController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Invoice ID:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_sale_id" layoutX="126.0" layoutY="10.0" prefHeight="30.0" prefWidth="186.0" text="S-0000000001" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="507.0" layoutY="10.0" text="Sale Date:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_sale_date" layoutX="619.0" layoutY="10.0" prefHeight="30.0" prefWidth="167.0" text="April 28, 2020" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" top="20.0" />
+               </padding>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="475.0" layoutY="53.0" text="Total Price:">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_total_price" layoutX="592.0" layoutY="5.0" prefHeight="78.0" prefWidth="128.0" text="0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="727.0" layoutY="53.0" text="Baht">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="Search By Product Id">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <JFXTextField fx:id="txt_search" prefWidth="250.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXButton fx:id="btn_search" buttonType="RAISED" onAction="#searchProduct" style="-fx-background-color: #000000;" text="SEARCH" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images24/search_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <JFXTextField fx:id="txt_product_id" labelFloat="true" prefWidth="150.0" promptText="Product Id">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txt_product_name" labelFloat="true" prefWidth="300.0" promptText="Product Name">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" onAction="#txt_amount" prefWidth="80.0" promptText="Amount">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+                  <JFXButton fx:id="btn_add_product" buttonType="RAISED" onAction="#addProduct" style="-fx-background-color: #000000;" text="ADD PRODUCT" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images24/add_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label text="List of Products" textFill="#0d95d9">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TableView fx:id="tb_product" prefHeight="220.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="col_product_id" editable="false" prefWidth="180.0" resizable="false" sortable="false" text="Product Id" />
+                <TableColumn fx:id="col_product_name" editable="false" prefWidth="400.0" resizable="false" sortable="false" text="Product Name" />
+                  <TableColumn fx:id="col_product_amount" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="Amount" />
+                  <TableColumn fx:id="col_product_price" editable="false" prefWidth="120.0" sortable="false" text="Price" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <JFXButton fx:id="btn_save" buttonType="RAISED" onAction="#saveSale" prefHeight="40.0" style="-fx-background-color: #000000;" text="SAVE" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images24/save_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_print" buttonType="RAISED" onAction="#printInvoice" prefHeight="40.0" style="-fx-background-color: #000000;" text="PRINT" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images24/printer_24px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" right="20.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
