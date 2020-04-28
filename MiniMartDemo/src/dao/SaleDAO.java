@@ -73,4 +73,27 @@ public class SaleDAO {
 		return result;
 	}
 	
+	public Sale selectSaleById(String sid) {
+		Sale sale = new Sale();
+		String sql = "SELECT * FROM sale WHERE id = ?";
+		try {
+			PreparedStatement ps = MySQLHelper.openDB().prepareStatement(sql);
+			ps.setString(1, sid);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				sale.setId(rs.getString(1));
+				sale.setSaleDate(rs.getString(2));
+				sale.setTotalPrice(rs.getInt(3));
+			}
+			rs.close();
+			ps.close();
+			MySQLHelper.closeDB();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return sale;
+	}
 }
