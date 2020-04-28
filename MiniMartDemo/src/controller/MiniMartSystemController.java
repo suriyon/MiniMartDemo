@@ -30,6 +30,9 @@ public class MiniMartSystemController implements Initializable{
 	@FXML
 	private AnchorPane pane_main;
 	
+	@FXML
+    private JFXButton toolbar_sale;
+	
     @FXML
     private JFXButton toolbar_user;
     
@@ -86,6 +89,11 @@ public class MiniMartSystemController implements Initializable{
     @FXML
     void showUser(ActionEvent event) {
     	loadUI("UserFXML.fxml");
+    }
+    
+    @FXML
+    void showSale(ActionEvent event) {
+    	loadUI("SaleFXML.fxml");
     }
 
 	@Override
@@ -147,6 +155,7 @@ public class MiniMartSystemController implements Initializable{
 		toolbar_category.setDisable(true);
 		toolbar_product.setDisable(true);
 		toolbar_user.setDisable(true);
+		toolbar_sale.setDisable(true);
 	}
 
 	private void enableButton() {
@@ -154,5 +163,6 @@ public class MiniMartSystemController implements Initializable{
 		toolbar_category.setDisable(false);
 		toolbar_product.setDisable(false);
 		toolbar_user.setDisable(false);
+		toolbar_sale.setDisable(false);
 	}
 }

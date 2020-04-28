@@ -11,6 +11,38 @@ import model.Product;
 import util.MySQLHelper;
 
 public class ProductDAO {
+	public void decreaseAmount(String id, int amount) {
+		String sql = "UPDATE product SET amount = amount - ? WHERE id = ?";
+		try {
+			PreparedStatement ps = MySQLHelper.openDB().prepareStatement(sql);
+			ps.setInt(1, amount);
+			ps.setString(2, id);
+
+			ps.executeUpdate();
+			
+			ps.close();
+			MySQLHelper.closeDB();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void increaseAmount(String id, int amount) {
+		String sql = "UPDATE product SET amount = amount + ? WHERE id = ?";
+		try {
+			PreparedStatement ps = MySQLHelper.openDB().prepareStatement(sql);
+			ps.setInt(1, amount);
+			ps.setString(2, id);
+
+			ps.executeUpdate();
+			
+			ps.close();
+			MySQLHelper.closeDB();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public String autoProductId() {
 		String id = "";
 		String sql = "SELECT id FROM product ORDER BY id DESC LIMIT 1";

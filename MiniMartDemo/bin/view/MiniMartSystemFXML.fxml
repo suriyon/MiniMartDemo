@@ -68,6 +68,15 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
+                        <JFXButton fx:id="toolbar_sale" buttonType="RAISED" disable="true" focusTraversable="false" onAction="#showSale" prefHeight="90.0" prefWidth="120.0" styleClass="button-line" stylesheets="@../css/style.css" text="Sale" textFill="#19b9c6">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images32/sell_stock_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
                         <JFXButton fx:id="toolbar_user" buttonType="RAISED" disable="true" focusTraversable="false" onAction="#showUser" prefHeight="90.0" prefWidth="120.0" styleClass="button-line" stylesheets="@../css/style.css" text="Users" textFill="#19b9c6">
                            <graphic>
                               <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">

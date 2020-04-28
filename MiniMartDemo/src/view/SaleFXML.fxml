@@ -103,7 +103,7 @@
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" onAction="#txt_amount" prefWidth="80.0" promptText="Amount">
+                  <JFXTextField fx:id="txt_amount" labelFloat="true" prefWidth="80.0" promptText="Amount">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
@@ -153,7 +153,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                   </JFXButton>
-                  <JFXButton fx:id="btn_print" buttonType="RAISED" onAction="#printInvoice" prefHeight="40.0" style="-fx-background-color: #000000;" text="PRINT" textFill="WHITE">
+                  <JFXButton fx:id="btn_print" buttonType="RAISED" disable="true" onAction="#printInvoice" prefHeight="40.0" style="-fx-background-color: #000000;" text="PRINT" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
